@@ -123,4 +123,4 @@ let str3 = 'aassddff'
     return finalArray
  }
 
- console.log(anagrams(wordArray))
+ //console.log(anagrams(wordArray))
