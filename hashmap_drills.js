@@ -99,3 +99,28 @@ let str3 = 'aassddff'
  }
 
  //console.log(palindrome(str3));
+
+ const wordArray = ['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race'];
+ //expected result [['east', 'teas', 'eats'], ['cars', 'arcs'], ['acre', 'race']]
+
+ function anagrams(arr) {
+    let tempHash = new Map();
+    for (let i = 0; i < arr.length; i++){
+        const abcString = arr[i].split('').sort().join('')
+        let samsiesArray = []
+        arr.forEach(word => {
+            if(abcString === word.split('').sort().join('')){
+                samsiesArray.push(word)
+            }
+        })
+        tempHash.set(abcString, samsiesArray)
+    }    
+    finalArray = []
+    tempHash.forEach(value => {
+        finalArray.push(value)
+    })
+        
+    return finalArray
+ }
+
+ console.log(anagrams(wordArray))
