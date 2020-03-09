@@ -44,7 +44,6 @@ const WhatDoesThisDo = function(){
 }
 
 //WhatDoesThisDo()
-console.log(10%9)
 
 //main()
 
@@ -57,3 +56,24 @@ console.log(10%9)
  *                     |10|
  * 
  */
+
+ const testString1 = 'google';
+ const testString2 = 'google all that you think can think of';
+
+ //g-o-o-g-l-e  => put into hash map
+ //if HashMap .has [i] do nothing
+ //if map doesn't have [i], insert into HashMap
+
+ function removeDuplicates (str) {
+    let characterMap = new Map()
+    for (i=0; i < str.length; i ++) {
+            characterMap.set(str[i], str[i])
+    }
+    let results = ''
+    characterMap.forEach(key => {
+        results += key
+    });
+    return results
+ }
+
+ console.log(removeDuplicates(testString2))
