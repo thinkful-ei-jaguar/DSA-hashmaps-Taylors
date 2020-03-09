@@ -70,8 +70,8 @@ const WhatDoesThisDo = function(){
             characterMap.set(str[i], str[i])
     }
     let results = ''
-    characterMap.forEach(key => {
-        results += key
+    characterMap.forEach(value => {
+        results += value
     });
     return results
  }
