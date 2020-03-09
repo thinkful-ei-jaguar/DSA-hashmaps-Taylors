@@ -76,4 +76,26 @@ const WhatDoesThisDo = function(){
     return results
  }
 
- console.log(removeDuplicates(testString2))
+ //console.log(removeDuplicates(testString2))
+let str1 = 'acecarr'
+let str2 = 'north'
+let str3 = 'aassddff'
+
+ const palindrome = (str) => {
+    let pal = new Map();
+    let duplicates = 0;
+    
+    for(let i =0; i<str.length; i++) {
+        if(pal.has(str[i])){
+            duplicates++
+        }
+        pal.set(str[i])
+    }
+ 
+    if (duplicates === Math.floor(str.length/2)) {
+        return true         
+    }
+    return false;
+ }
+
+ //console.log(palindrome(str3));
