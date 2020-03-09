@@ -5,7 +5,15 @@ class HashMap {
         this._capacity = initialCapacity;
         this._deleted = 0;
     }
-    
+
+    get(key) {
+        const index = this._findSlot(key);
+        if (this._hashTable[index] === undefined) {
+            throw new Error('Key error');
+        }
+        return this._hashTable[index].value;
+    }
+
     static _hashString (string) {
         let hash = 5381;
         for (let i = 0; i < string.length; i++) {
@@ -63,6 +71,7 @@ class HashMap {
         // Reset the length - it will get rebuilt as you add the items back
         this.length = 0;
         this._hashTable = [];
+        this.deleted = 0;
 
         for (const slot of oldSlots) {
             if (slot !== undefined) {
@@ -71,3 +80,5 @@ class HashMap {
         }
     }
 }
+
+module.exports = HashMap
